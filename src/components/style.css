@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+.grid{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    background-color: bisque;
+    height: 90vh;
+}
+.wrapper-post{
+    color: wheat;
+    font-family: 'Satisfy', cursive;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+@media (max-width:800px){
+    .grid{
+        display: block;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: repeat(5,1fr);
+    }
+    .wrapper-post{
+        background-size: 100% auto;
+    }
+}

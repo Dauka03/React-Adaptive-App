@@ -1,0 +1,29 @@
+.head{
+    background-color:darkslategrey;
+    height: 10vh;
+    display: flex;
+    justify-content:space-between;
+
+}
+.head input{
+    background-color: darkolivegreen;
+    border-radius: 25%;
+    border: none;
+    width: 140px;
+    height: 20px;
+}
+.toolBar {
+    display: flex;
+    padding: 10px;   
+}
+.toolBar input{
+    margin-top: 10px;
+}
+p{
+    color: beige;
+}
+@media (max-width:800px){
+    p{
+        display: none;
+    }
+}
