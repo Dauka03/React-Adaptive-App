@@ -2,28 +2,29 @@ import './header.css'
 import Icon from '../assets/icon.js'
 import React from 'react';
 
+import { useEffect,useState } from 'react';
  
-import { format, utcToZonedTime,zonedTimeToUtc} from 'date-fns-tz'
+import { format, utcToZonedTime} from 'date-fns-tz'
 
 
 
-function time(){
-    const date = new Date()
-    const nyDate = utcToZonedTime(date)
-    return <p>{format(nyDate, 'yyyy-MM-dd HH:mm:ssXXX', { timeZone: 'America/New_York' })} </p>
-}
-
-
-function Header(){
-//         function time(){
+// function time(){
 //     const date = new Date()
 //     const nyDate = utcToZonedTime(date)
-//     return (useEffect(()=>{
-//         setInterval(
-//             <p>{format(nyDate, 'yyyy-MM-dd HH:mm:ssXXX', { timeZone: 'America/New_York' })} </p>
-//             ,1000)
-//     }))
+//     const [format2,setFormat] = useState(format(nyDate, 'yyyy-MM-dd HH:mm:ssXXX', { timeZone: 'America/New_York' }))
+//     return setInterval(format2,1000)
 // }
+        
+
+function Header(){
+    const [myTime,setMyTime] = useState("");
+
+    useEffect(()=>{
+        setInterval(()=>{
+        setMyTime(format(utcToZonedTime(new Date()), 'yyyy-MM-dd HH:mm:ssXXX', { timeZone: 'America/New_York' }))})
+    },[myTime])
+
+ 
 return(
     <div className='head'>
         <div className='toolBar'>
@@ -31,7 +32,9 @@ return(
         <input className='inp'></input>
         </div>
         <div>
-        <p>{time()}</p>
+        <p>{myTime}</p>
+        <p>{
+        }</p>
         </div>
             
     </div>
